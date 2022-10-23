@@ -2,6 +2,7 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+    background-color: black;
 }
 
 .main-container{
@@ -52,10 +53,10 @@
 
 .cardPizzaError{
     color: red;
-    border: 1px solid red;
-    background-color: lightgray;
+    border: 1px solid black;
     border-radius: 5px;
     padding: 10px;
+    box-shadow: 0px 0px 5px white;
 }
 
 .cardPizzaOk{
@@ -68,30 +69,42 @@
     flex-direction: column;
     align-content: center;
     align-items: center;
+    box-shadow: 5px 5px 5px white;
     
 }
 
 .pizzaImg{
-   
     width: 200px;
     height: 200px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px gray;
+    box-shadow: 2px 2px 40  px white;
     margin: 20px;
 }
-
+.label-titulo{
+    font-size: 30px;
+    color: white;
+}
 button{
     color: yellow;
     background-color: gray;
     border-radius: 10px;
+    padding: 20px;
+    font-size: 18px;    box-shadow: 0px 0px 5px white;
+
 }
 
 input{
     border-radius: 10px;
     text-align: center;
+    margin: 20px;
+    padding: 10px;
+    font-size: medium;
+    color: white;
+    box-shadow: 0px 0px 5px white;
+
     
 }
 
