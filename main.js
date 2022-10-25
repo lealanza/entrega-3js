@@ -70,12 +70,10 @@ const agregarListado = document.getElementById("mostarSeleccion");
 
 const findPizzas = (value) => Pizzas.find(pizza => pizza.id === value)
 
-
 const showEmptyError = () => {
     agregarListado.innerHTML = `
     <div class="cardPizzaError">
         <h2 class="error-title">No a ingresado ningun numero</h2>
-        
     </div>`
 }
 const renderResult = (pizza) => {
@@ -90,19 +88,10 @@ const renderResult = (pizza) => {
         <h4 class="pizza-ingredientes">Numero: ${pizza.id}</h4>
             <h2 class="pizza-title">${pizza.nombre}</h2>
             <h3 class="pizza-price">$${pizza.precio}</h3>
-            
             <h4 class="pizza-ingredientes">${pizza.ingredientes}</h4>
             <div class="pizzaImg" style='background-image: url("img/${pizza.img}");'></div>
         </div>`;
-        
     }
-}
-const getLast = () =>{
-    pizzaListado = JSON.parse(localStorage.getItem("pizza"))||[]
-    pizzaListado=[...pizzaListado]
-    pizzaListado = pizzaListado[pizzaListado.length]
-    return pizzaListado;
-    
 }
 
 const saveLocalStorage = (pizza ) =>{ 
