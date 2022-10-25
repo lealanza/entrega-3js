@@ -108,25 +108,7 @@ const getLast = () =>{
 const saveLocalStorage = (pizza ) =>{ 
     localStorage.setItem("pizza", JSON.stringify(pizza))
 }
-const render = (pizza) =>{
-    if(pizza<pizza.len){
-        gregarListado.innerHTML = `
-        <div class="cardPizzaOk">
-        <h4 class="pizza-ingredientes">Numero: ${pizza.id}</h4>
-            <h2 class="pizza-title">${pizza.nombre}</h2>
-            <h3 class="pizza-price">$${pizza.precio}</h3>
-            
-            <h4 class="pizza-ingredientes">${pizza.ingredientes}</h4>
-            <div class="pizzaImg" style='background-image: url("img/${pizza.img}");'></div>
 
-        </div>`;
-    }else{
-        agregarListado.innerHTML = `
-        <div class="cardPizzaError">
-        <h2 class="error-title">No se encontro una pizza con el numero ingresado</h2>
-    </div>`
-    }
-}
 const searchPizza = (e) => {
     e.preventDefault();
     const numeroValue = selectorPizzas.value;
@@ -135,7 +117,9 @@ const searchPizza = (e) => {
         return;
     }
     const searchedPizza= findPizzas(Number(numeroValue));
-    saveLocalStorage(searchedPizza);
+    if(searchedPizza!==undefined){
+        saveLocalStorage(searchedPizza);
+    }
     renderResult(searchedPizza);
     numeroValue.value="";
     formu.reset();
@@ -143,7 +127,11 @@ const searchPizza = (e) => {
 
 const init = () => {
     const ultima = JSON.parse( localStorage.getItem("pizza"));
-    renderResult(ultima) 
+    if(ultima)
+    {
+        renderResult(ultima) 
+    }
+    
     formu.addEventListener("submit", searchPizza);
     
 };
